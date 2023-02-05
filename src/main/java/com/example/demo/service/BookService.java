@@ -35,4 +35,9 @@ public class BookService {
 		List<Book> books=repo.findAll();		
 		return ResponseEntity.ok().body(books);
 	}
+
+	public ResponseEntity<Book> findByid() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

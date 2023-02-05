@@ -4,10 +4,14 @@ import com.example.demo.Model.Book;
 import com.example.demo.repository.BookRepo;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +35,7 @@ public class BookController {
 	}
 	
 	
-	@GetMapping("/dummy")
+	@GetMapping("/c")
 	public String create() {
 		Book b= new Book(1L, "spring", 45, "umesh");
 		
@@ -52,6 +56,19 @@ public class BookController {
 		return service.find();
 	}
 	
-	
+
+	@GetMapping("/get/{id}")
+		public ResponseEntity<Book> find(@PathVariable Long id){
+		Optional<Book> book=repo.findById(id);
+		
+			if(book.isPresent())
+				return new ResponseEntity(book,HttpStatus.OK);
+			else
+				return new ResponseEntity<Book>(HttpStatus.NOT_FOUND);
+	}
+		
+		
+		
+
 	
 }
