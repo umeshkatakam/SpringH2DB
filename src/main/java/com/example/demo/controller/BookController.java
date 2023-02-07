@@ -1,7 +1,10 @@
 package com.example.demo.controller;
 
 import com.example.demo.Model.Book;
+<<<<<<< HEAD
 import com.example.demo.exception.ResourceNotFoundException;
+=======
+>>>>>>> 401a2aa492a2c3e03a0eb8b900141de87f50f8a5
 import com.example.demo.repository.BookRepo;
 
 import java.util.List;
@@ -54,6 +57,7 @@ public class BookController {
 	
 	public ResponseEntity<List<Book>> findAll(){
 		
+<<<<<<< HEAD
 		
 		
 		try{
@@ -67,6 +71,9 @@ public class BookController {
 		
 		
 		
+=======
+		return service.find();
+>>>>>>> 401a2aa492a2c3e03a0eb8b900141de87f50f8a5
 	}
 	
 
@@ -80,6 +87,7 @@ public class BookController {
 				return new ResponseEntity<Book>(HttpStatus.NOT_FOUND);
 	}
 		
+<<<<<<< HEAD
 		@GetMapping("/find/{id}")
 	public ResponseEntity<Book> getByid(@PathVariable("id") Long id){
 		Book b=repo.findById(id).orElseThrow(()->new ResourceNotFoundException("not found with id "+id));
@@ -89,6 +97,10 @@ public class BookController {
 		
 	}
 		
+=======
+		
+		
+>>>>>>> 401a2aa492a2c3e03a0eb8b900141de87f50f8a5
 
 	
 }

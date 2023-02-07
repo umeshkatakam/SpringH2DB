@@ -47,11 +47,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>com.example</groupId>
 			<artifactId>demoSpring</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+=======
+>>>>>>> 401a2aa492a2c3e03a0eb8b900141de87f50f8a5
 	</dependencies>
 
 	<build>
